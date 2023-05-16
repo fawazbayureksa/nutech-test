@@ -32,7 +32,54 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.image-container {
+  height: 400px;
+  max-width: 500px;
+}
+
+.style-text {
+  font-size: 32px;
+  font-family: bold;
+}
+
+/* Sidebar */
+
+.sidebar {
+  background-color: #282c34;
+  height: 100vh;
+  width: 300px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sidebar li a:hover {
+  color: orange;
+}
+
+/*---------------  */
+
+.brand-dashbord {
+  padding: 10px;
+  font-size: 32px;
+  color: #fff;
+  font-family: bold;
 }
