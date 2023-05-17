@@ -9,20 +9,20 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Category</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Category</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Product</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Product</a>
                         </li>
                     </ul>
                 </div>
-                <span class="navbar-text">
-                    <a href='/dashboard' class="btn btn-outline-success me-2">Login</a>
+                <span className="navbar-text">
+                    <a href='/login' className="btn btn-outline-success me-2">Login</a>
                 </span>
             </div>
         </nav >

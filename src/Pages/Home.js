@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Template from '../components/template/template';
 import Card from '../components/helpers/Card';
-
+import {
+    collection,
+    getDocs,
+    getFirestore,
+} from 'firebase/firestore';
+import firebase from '../Firebase';
 const Home = () => {
+    const db = getFirestore(firebase);
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    const getData = async () => {
+        const arr = [];
+        const querySnapshot = await getDocs(collection(db, "product"));
+        querySnapshot.forEach((doc) => {
+            arr.push({ data: doc.data(), id: doc.id });
+        });
+        setData(arr)
+    }
+
     return (
         <Template>
             <div className='row align-items-center' style={{ backgroundColor: "#E3D7FF", borderRadius: "10px" }}>
@@ -18,21 +40,16 @@ const Home = () => {
                         alt="..." />
                 </div>
             </div>
-            <div className='d-flex flex-row my-3'>
-                <div className='col-3'>
-                    <Card
-                        image={"/images/tshirt1.jpg"}
-                        price={10000}
-                        title={"Tshirt Polos"}
-                    />
-                </div>
-                <div className='col-3'>
-                    <Card
-                        image={"/images/tshirt2.jpg"}
-                        price={20000}
-                        title={"Tshirt Polos"}
-                    />
-                </div>
+            <div className='d-flex flex-row flex-wrap mt-3'>
+                {data.length > 0 && data.map((item, index) => (
+                    <div className='col-3' key={index}>
+                        <Card
+                            image={item.data.url}
+                            price={item.data.selling_price}
+                            title={item.data.product_name}
+                        />
+                    </div>
+                ))}
             </div>
         </Template>
     );

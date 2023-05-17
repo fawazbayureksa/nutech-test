@@ -1,0 +1,55 @@
+[debug] [2023-05-16T07:11:11.796Z] ----------------------------------------------------------------------
+[debug] [2023-05-16T07:11:11.799Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ASUS-PC\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-05-16T07:11:11.799Z] CLI Version:   12.0.0
+[debug] [2023-05-16T07:11:11.800Z] Platform:      win32
+[debug] [2023-05-16T07:11:11.800Z] Node Version:  v16.14.2
+[debug] [2023-05-16T07:11:11.801Z] Time:          Tue May 16 2023 14:11:11 GMT+0700 (Western Indonesia Time)
+[debug] [2023-05-16T07:11:11.801Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-16T07:11:11.811Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-16T07:11:11.812Z] > authorizing via signed-in user (fawwazbayureksa@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\PROJECT\nutech\test-nutech
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-05-16T07:11:56.687Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-05-16T07:11:58.307Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-05-16T07:11:58.307Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project nutech-test-2fd0e (nutech-test) 
+[info] 
+=== Firestore Setup
+[debug] [2023-05-16T07:12:02.919Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/nutech-test-2fd0e/services/firestore.googleapis.com [none]
+[debug] [2023-05-16T07:12:02.919Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/nutech-test-2fd0e/services/firestore.googleapis.com x-goog-quota-user=projects/nutech-test-2fd0e
+[debug] [2023-05-16T07:12:04.551Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/nutech-test-2fd0e/services/firestore.googleapis.com 200
+[debug] [2023-05-16T07:12:04.551Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/nutech-test-2fd0e/services/firestore.googleapis.com [omitted]
+[debug] [2023-05-16T07:12:04.552Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/nutech-test-2fd0e/databases/(default) [none]
+[debug] [2023-05-16T07:12:06.089Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/nutech-test-2fd0e/databases/(default) 200
+[debug] [2023-05-16T07:12:06.089Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/nutech-test-2fd0e/databases/(default) {"name":"projects/nutech-test-2fd0e/databases/(default)","uid":"e5127360-c597-46a9-9db4-59b6780c4374","createTime":"2023-05-16T06:16:05.817257Z","updateTime":"2023-05-16T06:16:05.817257Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IKOf6sqk+f4CMLHaqOib+f4C"}
+[debug] [2023-05-16T07:12:06.089Z] database_type: FIRESTORE_NATIVE
+[debug] [2023-05-16T07:12:06.090Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-16T07:12:06.090Z] > authorizing via signed-in user (fawwazbayureksa@gmail.com)
+[debug] [2023-05-16T07:12:06.090Z] [iam] checking project nutech-test-2fd0e for permissions ["firebase.projects.get"]
+[debug] [2023-05-16T07:12:06.090Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nutech-test-2fd0e:testIamPermissions [none]
+[debug] [2023-05-16T07:12:06.091Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nutech-test-2fd0e:testIamPermissions x-goog-quota-user=projects/nutech-test-2fd0e
+[debug] [2023-05-16T07:12:06.091Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nutech-test-2fd0e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-05-16T07:12:07.219Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nutech-test-2fd0e:testIamPermissions 200
+[debug] [2023-05-16T07:12:07.219Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nutech-test-2fd0e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 

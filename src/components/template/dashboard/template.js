@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Template = ({ children }) => {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        navigate("/");
+    }
+
     return (
         <div className="">
             <div className="d-flex flex-row">
@@ -11,10 +19,10 @@ const Template = ({ children }) => {
                         <li><a href="#">Menu 2</a></li>
                         <li><a href="#">Menu 3</a></li>
                         <li><a href="#">Menu 4</a></li>
-                        <li><a href="/" className='text-danger'>Logout</a></li>
+                        <li><a href="#" onClick={handleLogout} className='text-danger'>Logout</a></li>
                     </ul>
                 </div>
-                <div className="col">
+                <div className="content">
                     <div className="container-fluid mt-3">
                         {children}
                     </div>

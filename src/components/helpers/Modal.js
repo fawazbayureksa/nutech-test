@@ -2,9 +2,9 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const ModalComponent = ({ show, handleClose, content, title }) => {
+const ModalComponent = ({ show, handleClose, content, title, handleSave }) => {
     return (
-        <Modal show={show} onHide={handleClose} size='lg'>
+        <Modal show={show} onHide={handleClose} size='md'>
             <Modal.Header closeButton>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
@@ -15,7 +15,7 @@ const ModalComponent = ({ show, handleClose, content, title }) => {
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="success" onClick={handleSave}>
                     Save
                 </Button>
             </Modal.Footer>
