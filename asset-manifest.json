@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nutech-test/static/css/main.b287d1be.css",
+    "main.js": "/nutech-test/static/js/main.7893de2f.js",
+    "static/js/787.fa0d6d67.chunk.js": "/nutech-test/static/js/787.fa0d6d67.chunk.js",
+    "index.html": "/nutech-test/index.html",
+    "main.b287d1be.css.map": "/nutech-test/static/css/main.b287d1be.css.map",
+    "main.7893de2f.js.map": "/nutech-test/static/js/main.7893de2f.js.map",
+    "787.fa0d6d67.chunk.js.map": "/nutech-test/static/js/787.fa0d6d67.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b287d1be.css",
+    "static/js/main.7893de2f.js"
+  ]
+}
