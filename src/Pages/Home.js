@@ -7,6 +7,7 @@ import {
     getFirestore,
 } from 'firebase/firestore';
 import firebase from '../Firebase';
+import HomeLogo from '../assets/images/home1.png';
 const Home = () => {
     const db = getFirestore(firebase);
 
@@ -28,16 +29,17 @@ const Home = () => {
     return (
         <Template>
             <div className='row align-items-center' style={{ backgroundColor: "#E3D7FF", borderRadius: "10px" }}>
-                <div className='col-md-6 col-sm-12 ml-5'>
+                <div className='col-md-6 col-sm-12 ml-5 p-3'>
                     <span className='style-text'>Life is easy with online shopping</span>
                     <br />
-                    <button class="btn btn-outline-primary mt-3" type="button">Shop Now</button>
+                    <button className="btn btn-outline-primary mt-3" type="button">Shop Now</button>
                 </div>
                 <div className='col-md-6 col-sm-12'>
                     <img
-                        src="/images/home1.png"
-                        className="image-container"
-                        alt="..." />
+                        src={HomeLogo}
+                        className="image-container "
+                        alt="..."
+                    />
                 </div>
             </div>
             <div className='d-flex flex-row flex-wrap mt-3'>
