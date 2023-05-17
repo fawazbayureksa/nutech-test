@@ -6,7 +6,7 @@ const Template = ({ children }) => {
 
     const handleLogout = () => {
         localStorage.removeItem('user');
-        navigate("/");
+        navigate("/nutech-test/home");
     }
 
     return (
@@ -15,7 +15,7 @@ const Template = ({ children }) => {
                 <div className="sidebar">
                     <h3 className='brand-dashbord'>Shopi</h3>
                     <ul>
-                        <li><a href="/product">Product</a></li>
+                        <li><a href="/nutech-test/product">Product</a></li>
                         <li><a href="#">Menu 2</a></li>
                         <li><a href="#">Menu 3</a></li>
                         <li><a href="#">Menu 4</a></li>

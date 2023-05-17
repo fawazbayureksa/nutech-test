@@ -10,33 +10,53 @@ import firebase from '../../../Firebase';
 import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const db = getFirestore(firebase);
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
     const navigate = useNavigate();
 
 
     const onLogin = async () => {
-        const queryEmail = query(collection(db, "users"), where("email", "==", email));
-        const queryPassword = query(collection(db, "users"), where("password", "==", password));
+        if (!validation()) {
+            alert("Please input email and password before!");
+            return
+        }
+        try {
+            const queryEmail = query(collection(db, "users"), where("email", "==", email));
+            const queryPassword = query(collection(db, "users"), where("password", "==", password));
 
-        const docsEmail = await getDocs(queryEmail);
-        let users = []
-        docsEmail.forEach((doc) => {
-            users.push(doc.data())
-        });
-        const us = users.find((user) => user.email === email);
+            const docsEmail = await getDocs(queryEmail);
+            const docsPassword = await getDocs(queryPassword);
+            let users = []
 
-        if (!us) {
-            alert("Please input a correct email address")
-        } else {
-            localStorage.setItem('user', JSON.stringify(us));
-            navigate("/dashboard");
+            docsEmail.forEach((doc) => {
+                users.push(doc.data())
+            });
+            const us = users.find((user) => user.email === email);
+
+            if (!us) {
+                alert("Please input a correct email address")
+            } else {
+                localStorage.setItem('user', JSON.stringify(us));
+                navigate("/nutech-test/dashboard");
+            }
+        }
+        catch (err) {
+            console.log(err);
         }
 
     }
 
+    const validation = () => {
+        let validate = true
+        if (email === '') validate = false
+        if (password === '') validate = false
+
+        return validate
+    }
+
+
     const handleBack = () => {
-        navigate("/");
+        navigate("/home");
     }
 
 

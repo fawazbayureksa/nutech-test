@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min';
@@ -11,14 +11,14 @@ import Login from './Pages/Dashboard/Auth/Login';
 function App() {
 
   return (
-    <Router>
+    <BrowserRouter basename='/nutech-test'>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
