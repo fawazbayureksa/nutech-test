@@ -26,6 +26,7 @@ const Home = () => {
         setData(arr)
     }
 
+
     return (
         <Template>
             <div className='row align-items-center' style={{ backgroundColor: "#E3D7FF", borderRadius: "10px" }}>

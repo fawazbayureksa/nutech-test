@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const [user, setUser] = useState({});
+    const history = useHistory();
+
+    useEffect(() => {
+        const item = localStorage.getItem('user');
+        setUser(item);
+    }, [])
+
+    const handleLogin = () => {
+        if (!user) {
+            history.push('/login')
+        } else {
+            history.push('/dashboard')
+        }
+    }
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary" >
             <div className="container">
@@ -22,7 +40,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <span className="navbar-text">
-                    <a href='/login' className="btn btn-outline-success me-2">Login</a>
+                    <button onClick={handleLogin} className="btn btn-outline-success me-2">Login</button>
                 </span>
             </div>
         </nav >
