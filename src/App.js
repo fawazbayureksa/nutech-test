@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './Pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min';
@@ -11,14 +11,16 @@ import Login from './Pages/Dashboard/Auth/Login';
 function App() {
 
   return (
-    <BrowserRouter basename='/nutech-test'>
-      <Routes>
-        <Route exact path="/home" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter basename='/'>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/product" component={Product} />
+          <Route path="/login" component={Login} />
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 

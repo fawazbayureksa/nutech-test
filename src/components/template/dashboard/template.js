@@ -1,12 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Template = ({ children }) => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+    const history = useHistory()
 
     const handleLogout = () => {
         localStorage.removeItem('user');
-        navigate("/nutech-test/home");
+        history.push("/");
     }
 
     return (
@@ -15,7 +16,7 @@ const Template = ({ children }) => {
                 <div className="sidebar">
                     <h3 className='brand-dashbord'>Shopi</h3>
                     <ul>
-                        <li><a href="/nutech-test/product">Product</a></li>
+                        <li><a href="/product">Product</a></li>
                         <li><a href="#">Menu 2</a></li>
                         <li><a href="#">Menu 3</a></li>
                         <li><a href="#">Menu 4</a></li>

@@ -7,12 +7,12 @@ import {
     where,
 } from 'firebase/firestore';
 import firebase from '../../../Firebase';
-import { useNavigate } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 const Login = () => {
     const db = getFirestore(firebase);
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const navigate = useNavigate();
+    const history = useHistory()
 
 
     const onLogin = async () => {
@@ -37,7 +37,7 @@ const Login = () => {
                 alert("Please input a correct email address")
             } else {
                 localStorage.setItem('user', JSON.stringify(us));
-                navigate("/nutech-test/dashboard");
+                history.push("/dashboard");
             }
         }
         catch (err) {
@@ -56,7 +56,7 @@ const Login = () => {
 
 
     const handleBack = () => {
-        navigate("/home");
+        history.push("/");
     }
 
 
