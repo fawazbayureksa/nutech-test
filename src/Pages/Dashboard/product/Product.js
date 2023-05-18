@@ -25,6 +25,7 @@ const Product = () => {
     const [show, setShow] = useState(false)
     const [modalConfirm, setModalConfirm] = useState(false)
     const [data, setData] = useState([])
+    const [search, setSearch] = useState("")
     const [image, set_image] = useState()
     const [product_name, set_product_name] = useState()
     const [purchase_price, set_purchase_price] = useState()
@@ -148,6 +149,16 @@ const Product = () => {
                     Product List
                 </span>
                 <button className='btn btn-primary btn-md h-50' onClick={() => setShow(true)}>Create Product</button>
+            </div>
+            <div className='w-25'>
+                <input
+                    name="search"
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Search..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
             </div>
             <div className='w-100 mt-3'>
                 <table className="table table-bordered text-center">
